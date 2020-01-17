@@ -1,0 +1,16 @@
+<div
+    style="display: flex; height: 90vh; margin: 0; padding: 0; flex-direction: column; justify-content: center; align-items: center;">
+
+    <div style="padding: 20px; ">username:</div>
+    <input [(ngModel)]="username" style="width: 150px" />
+
+    <br />
+
+    <div style="padding: 20px; ">password:</div>
+    <input [(ngModel)]="password" style="width: 150px" />
+
+    <button (click)="login(username, password)" style="margin: 20px; width: 100px">login</button>
+
+    {{ response }}
+
+</div>
