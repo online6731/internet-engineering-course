@@ -1,10 +1,13 @@
 <div class="panel">
+
     <input class="input-field" [(ngModel)]="username" placeholder="username" />
 
     <input class="input-field" [(ngModel)]="password" placeholder="password" />
 
     <button class="button-field" (click)="login(username, password)" style="margin: 20px; width: 100px">login</button>
 
-    {{ response }}
+    <div>
+        {{ response }}
+    </div>
 
 </div>
