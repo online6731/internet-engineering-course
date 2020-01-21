@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login-validation',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginValidationComponent implements OnInit {
 
-  constructor() { }
+  user = {
+    username: '',
+    password: ''
+  }
+
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
+  login(username, password) {
+    this.loginService.login(username, password).subscribe((body) => {
+
+    });
+  }
 }

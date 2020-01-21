@@ -1,1 +1,11 @@
-<p>perfect-number works!</p>
+<div class="main">
+    <div class="number-panel">
+        <button class="button-field" (click)="gotoLoginPage(number)" *ngFor="let number of numbers"> {{ number }}
+        </button>
+    </div>
+
+    <div class="generate-panel">
+        <button (click)="generateNumbers()"> Generate </button>
+    </div>
+
+</div>

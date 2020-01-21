@@ -1,1 +1,9 @@
-<p>login-validation works!</p>
+<form class="login-panel" (ngSubmit)="login(username, password)" #loginForm="ngForm">
+    <input name="username" #username="ngModel" id="username" class="input-field" type="text" placeholder="username"
+        [(ngModel)]="user.username" pattern="[^a-z]*" required>
+
+    <input name="password" #password="ngModel" id="password" class="input-field" type="text" [(ngModel)]="user.password"
+        placeholder="password" required>
+
+    <button type="submit" class="button-field" [disabled]="!loginForm.form.valid"> Login </button>
+</form>
