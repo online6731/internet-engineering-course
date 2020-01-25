@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block content %}
+
+
+<div class="ui center aligned grid">
+    <div class="column">
+        <h2 class="ui purple image header" style="display: block; padding-top: 30px; padding-bottom: 15px;">
+            <div class="content">Statistical Report</div>
+        </h2>
+        <div style="text-align: left;">
+            <h2 class="ui header">
+                Married Employees <span style="float: right;">{{ statistics.married_count }}</span>
+            </h2>
+
+            <h2 class="ui header">
+                Bachelor Employees <span style="float: right;">{{ statistics.bachelor_count }}</span>
+            </h2>
+
+            <h2 class="ui header">
+                Number of Employees with high Wage <span style="float: right;">{{ statistics.high_wage_count }}</span>
+            </h2>
+
+            <h2 class="ui header">
+                Employee with Most wage <a href="/employee/{{ statistics.least_wage_employee.id }}/edit"
+                    style="float: right;">{{ statistics.most_wage_employee.first_name }}
+                    {{ statistics.most_wage_employee.last_name }}</a>
+            </h2>
+
+            <h2 class="ui header">
+                Employee with Least wage <a href="/employee/{{ statistics.least_wage_employee.id }}/edit"
+                    style="float: right;">{{ statistics.least_wage_employee.first_name }}
+                    {{ statistics.least_wage_employee.last_name }}</a>
+            </h2>
+
+            <h2 class="ui header">
+                Sum of Wage of all Employees <span style="float: right;">{{ statistics.sum_of_wages }}</span>
+            </h2>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<style type="text/css">
+    body {
+        background-color: #DADADA;
+    }
+
+    body>.grid {
+        height: 90%;
+    }
+
+    .column {
+        max-width: 700px;
+    }
+</style>
+
+{% endblock %}

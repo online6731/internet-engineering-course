@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="ui center aligned grid">
+  <div class="column">
+    <h2 class="ui purple image header" style="padding-top: 30px; padding-bottom: 15px; display: block;">
+      <div class="content">
+        List of Employees
+      </div>
+    </h2>
+
+    <a href="/employee/new">ADD NEW EMPLOYEE</a> --
+    <a href="/employee/delete">DELETE AN EMPLOYEE</a>
+
+    <div class="ui selection list" style="text-align: left;">
+      {% for employee in employees %}
+      <a class="item" href="/employee/{{ employee.id }}/edit">
+        <img class="ui avatar image"
+          src="{% if employee.married %}https://semantic-ui.com/images/avatar2/small/matthew.png{% else %}https://semantic-ui.com/images/avatar2/small/rachel.png{% endif %}">
+        <div class="content">
+          <div class="header">{{ employee.first_name }} {{ employee.last_name }}</div>
+          <div class="description"> {{ employee.address }} ({{ employee.phone_number }}) </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<style type="text/css">
+  body {
+    background-color: #DADADA;
+  }
+
+  body>.grid {
+    height: 90%;
+  }
+
+  .column {
+    max-width: 500px;
+  }
+</style>
+
+{% endblock %}
